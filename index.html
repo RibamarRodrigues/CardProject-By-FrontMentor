@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+
+  <main>
+    <section class="cards-container">
+      <div class="card-front">
+        <img src="images/bg-card-front.png" alt="card-front">
+
+        <div class="card-front-details">
+          <img src="images/card-logo.svg" alt="card-logo">
+          <output id="out-number">0000 0000 0000 0000</output>
+          <output id="out-name">Jane Appleseed</output>
+          <div id="out-date">
+            <output id="out-mm">00</output>
+            <span>/</span>
+            <output id="out-yy">00</output>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-back">
+        <img src="images/bg-card-back.png" alt="card-back">
+        <output id="out-cvc">000</output>
+      </div>
+
+    </section>
+
+    <section class="card-infos">
+      <form>
+        <div class="infos-screen">
+          <div class="in-name">
+            <label for="card-name">Cardholder Name</label>
+            <input type="text" name="card-name" id="card-name" placeholder="e.g. Jane Appleseed" required pattern="[A-Za-z\s]{5,27}">
+            <p class="error-name">Wrong format, can't be blank or letter only</p>
+            <!-- <p>Wrong format, numbers only</p> -->
+          </div>
+  
+          <div class="in-number">
+            <label for="card-number">Card Number</label>
+            <input type="text" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" required pattern="[\d\s]{16,19}">
+            <p class="error-number">Wrong format, can't be blank or numbers only</p>
+          </div>
+  
+          <div class="in-date">
+            <label for="card-mm">Exp. Date (MM/YY)</label>
+            <div>
+              <input type="text" name="card-mm" id="card-mm" placeholder="MM" required pattern="[1-9][0-2]*">
+              <input type="text" name="card-yy" id="card-yy" placeholder="YY" required pattern="\d{2,4}">
+            </div>
+            <p class="error-date">Can't be blank or numbers only</p>
+          </div>
+  
+          <div class="in-cvc">
+            <label for="card-cvc">CVC</label>
+            <input type="text" name="card-cvc" id="card-cvc" placeholder="e.g. 123" required pattern="\d{3}">
+            <p class="error-cvc">Can't be blank or numbers only</p>
+          </div>
+
+          <input class="submit" type="submit" value="Confirm">
+        </div>
+        
+        <div class="complete-screen">
+          <img src="images/icon-complete.svg" alt="icon-complete">
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+          <input class="submit" type="reset" value="Continue">
+        </div>
+      </form>
+    </section>
+  </main>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ribamar</a>.
+  </div> -->
+
+
+  <script src="script.js"></script>
+</body>
+</html>

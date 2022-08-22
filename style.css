@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+img{
+    display: block;
+    width: 400px;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+output{
+    color: white;
+}
+
+/* Section 1 cards front and back */
+.cards-container{
+    width: 400px;
+    height: 100vh;
+    background-image: url(images/bg-main-desktop.png);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    gap: 50px; 
+}
+
+/* Card Front */
+.card-front{
+    position: relative;
+    transform: translateX(100px);
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.65);
+}
+
+.card-front-details{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px 20px 0px 20px;
+    display: grid;
+    grid-template-areas: 
+    "logo logo"
+    "number number"
+    "name date";
+}
+
+.card-front-details img{
+    width: 75px;
+    grid-area: logo;
+}
+
+#out-number{
+    grid-area: number;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    align-self: end;
+}
+
+#out-name{
+    grid-area: name;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    align-self: center;
+}
+
+#out-date{
+    grid-area: date;
+    text-align: right;
+    align-self: center;
+    color: white;
+}
+
+/* Card Back */
+.card-back{
+    position: relative;
+    transform: translateX(150px);
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.65);
+}
+
+#out-cvc{
+    position: absolute;
+    top: 95px;
+    left: 315px;
+    font-size: 1.25em;
+    letter-spacing: 2px;
+}
+
+/* Section 2 Card infos screen */
+.card-infos{
+    width: 400px;
+    align-self: center;
+    margin-right: 125px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.cars-infos form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.infos-screen{
+    display: grid;
+    grid-template-areas: 
+    "name name"
+    "number number"
+    "date cvc"
+    "confirm confirm";
+    gap: 10px;
+}
+
+.infos-screen.complete{
+    display: none;
+}
+
+.card-infos input{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin-top: 2px;
+}
+
+.in-name{
+    grid-area: name;
+}
+
+.in-number{
+    grid-area: number;
+}
+
+.in-date{
+    grid-area: date;
+    display: flex;
+    flex-direction: column;
+}
+
+.in-date input{
+    width: 80px;
+    margin-right: 5px;
+}
+
+.in-cvc{
+    grid-area: cvc;
+    display: flex;
+    flex-direction: column;
+}
+
+.submit{
+    grid-area: confirm;
+    color: white;
+    font-size: 1.2em;
+    background-color: hsl(278, 68%, 11%);
+    box-shadow: 5px 5px 5px hsl(278, 68%, 11%);
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.5) !important;
+    transition: .5s;
+}
+
+.submit:hover{
+    color: hsl(278, 68%, 11%);
+    background-color: white;
+}
+
+/* Error message */
+.infos-screen p{
+    text-transform: initial;
+    color: hsl(0, 100%, 66%);
+    font-size: 0.8em;
+    opacity: 0;
+}
+
+/* Complete Screen */
+.complete-screen{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    gap: 10px;
+}
+
+.complete-screen.complete{
+    display: flex;
+}
+
+.complete-screen img{
+    width: 100px;
+}
+
+.complete-screen h1{
+    letter-spacing: 3px;
+}
+
+.complete-screen p{
+    text-transform: initial;
+    margin-bottom: 25px;
+}
+
+/* Reponsive */
+@media (max-width: 1080px) {
+    .cards-container{
+        background-image: url(images/bg-main-mobile.png);
+        height: 300px;
+        width: 100vw;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+    }
+
+    .card-front{
+        transform: translate(100px, 125px);
+        z-index: 1;
+    }
+
+    .card-back{
+        transform: translateX(-200px);
+    }
+
+    .card-infos{
+        margin: 150px 0;
+        margin-right: 0;
+        width: 100vw;
+    }
+
+    .complete-screen{
+        width: 90vw;
+    }
+}
+
+/* Decrease card size */
+@media (max-width: 600px) {
+    img{
+        width: 300px;
+    }
+
+    .cards-container{
+        font-size: .7em;
+    }
+
+    .card-front{
+        transform: translate(125px, 100px);
+    }
+
+    .card-back{
+        transform: translateX(-150px);
+    }
+
+    #out-cvc{
+        top: 70px;
+        left: 235px;
+    }
+}
