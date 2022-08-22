@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://github.com/RibamarRodrigues/CardProject-By-FrontMentor)
+- Live Site URL: [Live Site](https://ribamarrodrigues.github.io/CardProject-By-FrontMentor/)
 
 ## My process
 
