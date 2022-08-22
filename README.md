@@ -71,5 +71,5 @@ I intend to learn more about RegEx and much more about Js, as I started to learn
 
 ## Author
 
-- GitHub - [Ribamar](https://https://github.com/RibamarRodrigues)
+- GitHub - [Ribamar](https://github.com/RibamarRodrigues)
 - Frontend Mentor - [@RibamarRodrigues](https://www.frontendmentor.io/profile/RibamarRodrigues)
